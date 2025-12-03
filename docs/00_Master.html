@@ -1,0 +1,1797 @@
+<!DOCTYPE html><html><head>
+      <title>00_Master</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\maxi.jatzkowski\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.20\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      <script type="text/javascript" src="file:///c:\Users\maxi.jatzkowski\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.20\crossnote\dependencies\mermaid\mermaid.min.js" charset="UTF-8"></script>
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+.markdown-preview.markdown-preview .mermaid {
+  text-align: center;
+  margin: 10px auto 24px auto;
+}
+.markdown-preview.markdown-preview .mermaid svg {
+  max-width: 70% !important;
+  width: 70% !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+}
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<p></p><div style="text-align: center; margin-top: 90px;">
+<h1 id="homelab-infrastructure-documentation"><strong>Homelab Infrastructure Documentation</strong> </h1>
+<h3 id="version-110"><strong>Version 1.1.0</strong> </h3>
+<h4 id="technical-architecture--operational-overview"><strong>Technical Architecture &amp; Operational Overview</strong> </h4>
+<br>
+<h2 id="author"><strong>Author</strong> </h2>
+<p><strong>Maximilian Jatzkowski</strong></p>
+<h2 id="last-updated"><strong>Last Updated</strong> </h2>
+<p><strong>2025-12-03</strong></p>
+<br>
+<hr>
+<h2 id="document-control"><strong>Document Control</strong> </h2>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Date</th>
+<th>Author</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0.0</td>
+<td>2025-12-02</td>
+<td>Maximilian Jatzkowski</td>
+<td>Initial release of Homelab project documentation</td>
+</tr>
+<tr>
+<td>1.1.0</td>
+<td>2025-12-03</td>
+<td>Maximilian Jatzkowski</td>
+<td>Restructured chapters, roadmap, issues and lessons</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="copyright-notice"><strong>Copyright Notice</strong> </h2>
+<p>This document and all information contained herein are the property of the author and may not be reproduced, distributed, or used for any commercial purpose without explicit permission.</p>
+<p>Unauthorized distribution is prohibited.</p>
+<hr>
+</div>
+<div class="pagebreak"> </div>
+<p></p>
+<h1 id="table-of-content">Table of Content </h1>
+<div class="code-chunk" data-id="code-chunk-id-0" data-cmd="toc"><div class="input-div"><div class="code-chunk-btn-group"><div class="run-btn btn btn-xs btn-primary"><span>▶︎</span></div><div class="run-all-btn btn btn-xs btn-primary">all</div></div><div class="status">running...</div></div><div class="output-div"></div></div><ul>
+<li><a href="#homelab-infrastructure-documentation"><strong>Homelab Infrastructure Documentation</strong></a>
+<ul>
+<li><a href="#version-110"><strong>Version 1.1.0</strong></a>
+<ul>
+<li><a href="#technical-architecture--operational-overview"><strong>Technical Architecture &amp; Operational Overview</strong></a></li>
+</ul>
+</li>
+<li><a href="#author"><strong>Author</strong></a></li>
+<li><a href="#date"><strong>Date</strong></a></li>
+<li><a href="#document-control"><strong>Document Control</strong></a></li>
+<li><a href="#copyright-notice"><strong>Copyright Notice</strong></a></li>
+</ul>
+</li>
+<li><a href="#table-of-content">Table of Content</a></li>
+<li><a href="#01---project-homelab-overview">01 - Project Homelab Overview</a>
+<ul>
+<li><a href="#11-executive-summary">1.1 Executive Summary</a></li>
+</ul>
+</li>
+<li><a href="#02---hardware-overview">02 - Hardware Overview</a>
+<ul>
+<li><a href="#21-server-hardware-proxmox-host">2.1 Server Hardware (Proxmox Host)</a></li>
+<li><a href="#22-networking-hardware">2.2 Networking Hardware</a></li>
+<li><a href="#23-switch-configuration-summary">2.3 Switch Configuration Summary</a></li>
+</ul>
+</li>
+<li><a href="#03---future-roadmap">03 - Future Roadmap</a><br>
+- <a href="#planned-additions">Planned additions:</a></li>
+<li><a href="#04--network-architecture">04 — Network Architecture</a>
+<ul>
+<li><a href="#41-high-level-design-diagram">4.1 High-Level Design Diagram</a></li>
+</ul>
+</li>
+<li><a href="#05---switch-and-vlan-configuration">05 - Switch and VLAN Configuration</a>
+<ul>
+<li><a href="#51-vlan-plan">5.1 VLAN Plan</a></li>
+<li><a href="#52-sg105e-vlan-implementation">5.2 SG105E VLAN Implementation</a></li>
+<li><a href="#53-port-plan">5.3 Port Plan</a></li>
+</ul>
+</li>
+<li><a href="#06---proxmox-configuration">06 - Proxmox Configuration</a>
+<ul>
+<li><a href="#61-network-interfaces-configuration">6.1 Network Interfaces Configuration</a>
+<ul>
+<li><a href="#62-proxmox-network-diagram">6.2 Proxmox Network Diagram</a></li>
+</ul>
+</li>
+<li><a href="#63-key-rules">6.3 Key Rules</a></li>
+</ul>
+</li>
+<li><a href="#07---opnsense-configuration">07 - OPNsense Configuration</a>
+<ul>
+<li><a href="#71-interface-assignment">7.1 Interface Assignment</a></li>
+<li><a href="#72-initial-console-setup-critical-steps">7.2 Initial Console Setup (Critical Steps)</a><br>
+- <a href="#wan-vtnet0">WAN (vtnet0)</a><br>
+- <a href="#lan-vtnet1">LAN (vtnet1)</a></li>
+<li><a href="#73-overview">7.3 Overview</a></li>
+</ul>
+</li>
+<li><a href="#08--installation-history">08 – Installation History</a>
+<ul>
+<li><a href="#81-hardware-bring-up-and-initial-system-issues">8.1 Hardware Bring-Up and Initial System Issues</a>
+<ul>
+<li><a href="#811-motherboard-cleaning-and-preparation">8.1.1 Motherboard Cleaning and Preparation</a></li>
+<li><a href="#812-ram-voltage-mismatch-causing-boot-loop">8.1.2 RAM Voltage Mismatch Causing Boot Loop</a></li>
+<li><a href="#813-incorrect-drive-selection-during-initial-proxmox-installation">8.1.3 Incorrect Drive Selection During Initial Proxmox Installation</a></li>
+<li><a href="#814-nvme-reinstallation-and-boot-drive-verification">8.1.4 NVMe Reinstallation and Boot Drive Verification</a></li>
+<li><a href="#815-nic-not-detected--pcie-slot-reassignment">8.1.5 NIC Not Detected → PCIe Slot Reassignment</a></li>
+</ul>
+</li>
+<li><a href="#82-network-configuration-challenges">8.2 Network Configuration Challenges</a>
+<ul>
+<li><a href="#821-vlan-and-proxmox-misconfigurations">8.2.1 VLAN and Proxmox Misconfigurations</a></li>
+<li><a href="#network-bring-up-overview-diagram">Network Bring-Up Overview Diagram</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#09--issues-and-solutions">09 – Issues and Solutions</a>
+<ul>
+<li><a href="#91-issue-ram-voltage-mismatch-causing-boot-loop">9.1 Issue: RAM Voltage Mismatch Causing Boot Loop</a></li>
+<li><a href="#92-issue-proxmox-unreachable-wrong-static-ip-assigned">9.2 Issue: Proxmox Unreachable (Wrong Static IP Assigned)</a></li>
+<li><a href="#93-issue-opnsense-assigning-ip-to-proxmox-vmbr0">9.3 Issue: OPNsense Assigning IP to Proxmox <code>vmbr0</code></a></li>
+<li><a href="#94-issue-iso-not-booting-inside-proxmox-vm">9.4 Issue: ISO Not Booting Inside Proxmox VM</a></li>
+<li><a href="#95-issue-10g-nic-not-detected">9.5 Issue: 10G NIC Not Detected</a></li>
+<li><a href="#96-issue-opnsense-boot-loop-into-live-mode">9.6 Issue: OPNsense Boot Loop Into Live Mode</a></li>
+<li><a href="#97-issue-proxmox-root-filesystem-becomes-read-only-after-enabling-iommu">9.7 Issue: Proxmox Root Filesystem Becomes Read-Only After Enabling IOMMU</a></li>
+<li><a href="#98-issue-flow-summary-diagram">9.8 Issue Flow Summary Diagram</a></li>
+</ul>
+</li>
+<li><a href="#10--lessons-learned">10 – Lessons Learned</a>
+<ul>
+<li><a href="#101-general-hardware-lessons">10.1 General Hardware Lessons</a></li>
+<li><a href="#102-proxmox-lessons">10.2 Proxmox Lessons</a></li>
+<li><a href="#103-firewall--opnsense-lessons">10.3 Firewall / OPNsense Lessons</a></li>
+<li><a href="#104-networking--vlan-lessons">10.4 Networking &amp; VLAN Lessons</a></li>
+<li><a href="#105-storage-lessons">10.5 Storage Lessons</a></li>
+<li><a href="#106-operational-lessons">10.6 Operational Lessons</a></li>
+<li><a href="#107-summary">10.7 Summary</a></li>
+</ul>
+</li>
+<li><a href="#11--best-practices">11 – Best Practices</a>
+<ul>
+<li><a href="#111-hypervisor-best-practices">11.1 Hypervisor Best Practices</a></li>
+<li><a href="#112-networking-best-practices">11.2 Networking Best Practices</a></li>
+<li><a href="#113-opnsense--firewall-best-practices">11.3 OPNsense / Firewall Best Practices</a></li>
+<li><a href="#114-storage-best-practices">11.4 Storage Best Practices</a></li>
+<li><a href="#115-operational-best-practices">11.5 Operational Best Practices</a></li>
+</ul>
+</li>
+</ul>
+<p></p><h1 id="01---project-homelab-overview">01 - Project Homelab Overview </h1>
+<h2 id="11-executive-summary">1.1 Executive Summary </h2>
+<p>This document provides a complete technical and architectural overview of my Homelab project.<br>
+It covers hardware configuration, network architecture, Proxmox virtualization, OPNsense routing, VLAN segmentation, issues encountered during implementation, resolutions, troubleshooting workflows, and planned future enhancements.</p>
+<p>The lab is designed to:</p>
+<ul>
+<li>provide an isolated penetration testing environment</li>
+<li>integrate a virtualized firewall and router (OPNsense)</li>
+<li>support Proxmox node management via a dedicated management network</li>
+<li>simulate enterprise-grade network segmentation</li>
+<li>host additional systems such as DNS servers, NAS storage, monitoring, and cloud backup infrastructure</li>
+<li>The documentation follows standard internal IT project documentation formats, including architectural diagrams, issue registers, and future roadmap guidance.</li>
+</ul>
+<div class="pagebreak"> </div>  <br>
+<h1 id="02---hardware-overview">02 - Hardware Overview </h1>
+<h2 id="21-server-hardware-proxmox-host">2.1 Server Hardware (Proxmox Host) </h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CPU</strong></td>
+<td>AMD Ryzen 5 5600X (repurposed from old PC)</td>
+</tr>
+<tr>
+<td><strong>RAM</strong></td>
+<td>16GB DDR4 3200MHz CL16 (2×8GB, compatible voltage after removal of mismatched sticks)</td>
+</tr>
+<tr>
+<td><strong>Motherboard</strong></td>
+<td>ASRock B450 Pro4</td>
+</tr>
+<tr>
+<td><strong>Primary Storage (Host)</strong></td>
+<td>500GB NVMe M.2 SSD (new purchase, used for Proxmox installation)</td>
+</tr>
+<tr>
+<td><strong>Additional Storage</strong></td>
+<td>1TB HDD (old), 2×4TB WD Red (new, for future NAS / RAIDZ1)</td>
+</tr>
+<tr>
+<td><strong>Power Supply</strong></td>
+<td>350W (limited SATA connectors, worked with SATA splitter approach)</td>
+</tr>
+<tr>
+<td><strong>GPU</strong></td>
+<td>Old GPU temporarily used for troubleshooting (no iGPU on CPU), removed afterward</td>
+</tr>
+<tr>
+<td><strong>NIC</strong></td>
+<td>ASUS XG-C100C 10G NIC (PCIe, moved to primary x16 slot for detection)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="22-networking-hardware">2.2 Networking Hardware </h2>
+<table>
+<thead>
+<tr>
+<th>Device</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TP-Link SG105E (Smart Managed Switch)</strong></td>
+<td>VLAN creation, trunking, segmentation</td>
+</tr>
+<tr>
+<td><strong>TP-Link SG105 (Unmanaged Switch)</strong></td>
+<td>Dedicated VLAN10 Homelab / Pentest LAN</td>
+</tr>
+<tr>
+<td><strong>DLAN Adapter</strong></td>
+<td>Temporary WAN uplink from Fritzbox to Homelab room</td>
+</tr>
+<tr>
+<td><strong>Cabling &amp; Labeling</strong></td>
+<td>Structured cabling work executed with label printer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="23-switch-configuration-summary">2.3 Switch Configuration Summary </h2>
+<p>TP-Link SG105E Configuration (Smart Managed)</p>
+<table>
+<thead>
+<tr>
+<th>Port</th>
+<th>Connection</th>
+<th>VLAN Mode</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Incoming from DLAN/Fritzbox</td>
+<td>VLAN1 untagged</td>
+<td>Main WAN/Heimnetz</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Free/temporary admin port</td>
+<td>VLAN1 or VLAN10 untagged</td>
+<td>Used for MacBook admin device</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Uplink to SG105 unmanaged</td>
+<td>VLAN10 untagged</td>
+<td>Dedicated Pentest/Homelab LAN</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Proxmox NIC0 (Onboard)</td>
+<td>VLAN1 untagged</td>
+<td>Management IP 192.168.178.10</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Proxmox 10G NIC (enp10s0)</td>
+<td>VLAN10 untagged</td>
+<td>Routed internally via OPNsense LAN</td>
+</tr>
+</tbody>
+</table>
+<div class="pagebreak"> </div>  <br>
+<h1 id="03--future-roadmap">03 – Future Roadmap </h1>
+<p>This chapter outlines planned extensions and improvements for the Homelab environment.<br>
+The roadmap is deliberately modular so that individual items can be implemented independently depending on time, budget, and hardware availability.</p>
+<hr>
+<h2 id="31-short-term-03-months">3.1 Short-Term (0–3 months) </h2>
+<p>These items provide immediate value with limited effort and minimal hardware requirements.</p>
+<ul>
+<li>
+<p><strong>Pi-hole / AdGuard Home (DNS filtering)</strong><br>
+Deploy a dedicated DNS filtering solution (VM or container) behind OPNsense to block ads, tracking, and malicious domains for the Homelab VLAN and optionally the home network.</p>
+</li>
+<li>
+<p><strong>Automated Configuration Backups</strong><br>
+Implement backup routines for:</p>
+<ul>
+<li>Proxmox configuration</li>
+<li>OPNsense config.xml</li>
+<li>TrueNAS configuration</li>
+<li>Important VM/container configs<br>
+Backups should be stored on the NAS and optionally synced to an external drive.</li>
+</ul>
+</li>
+<li>
+<p><strong>WireGuard VPN on OPNsense</strong><br>
+Provide secure remote access to the Homelab network using WireGuard, limited to specific VLANs and management addresses.</p>
+</li>
+</ul>
+<hr>
+<h2 id="32-mid-term-312-months">3.2 Mid-Term (3–12 months) </h2>
+<p>These additions extend functionality and improve resilience and observability.</p>
+<ul>
+<li>
+<p><strong>TrueNAS SCALE or ZFS-based NAS</strong><br>
+Build a dedicated NAS based on ZFS to host:</p>
+<ul>
+<li>VM disks</li>
+<li>Backups</li>
+<li>Media and data shares<br>
+Integrate with Proxmox via NFS or iSCSI.</li>
+</ul>
+</li>
+<li>
+<p><strong>Monitoring Stack (Prometheus, Grafana)</strong><br>
+Collect metrics from:</p>
+<ul>
+<li>Proxmox</li>
+<li>OPNsense</li>
+<li>NAS</li>
+<li>Critical VMs/containers<br>
+Visualize performance and capacity using Grafana dashboards.</li>
+</ul>
+</li>
+<li>
+<p><strong>Pentesting Lab with Active Directory Domain</strong><br>
+Create an isolated AD domain (e.g., Windows Server + clients) for penetration testing, Blue-Team exercises, and security research.<br>
+This lab remains strictly contained within a dedicated VLAN.</p>
+</li>
+<li>
+<p><strong>Cloud Backup Environment for Apple Devices</strong><br>
+Provide a dedicated backup target (e.g., SMB/Time Machine share on TrueNAS) for Apple devices in the home network.</p>
+</li>
+</ul>
+<hr>
+<h2 id="33-long-term-12-months">3.3 Long-Term (12+ months) </h2>
+<p>These projects further segment the network and introduce more advanced security concepts.</p>
+<ul>
+<li>
+<p><strong>VLAN20 – IoT</strong><br>
+Create an isolated VLAN20 for IoT devices:</p>
+<ul>
+<li>No direct access to Homelab VLAN10</li>
+<li>Restricted outbound Internet access</li>
+<li>Optional DNS filtering by Pi-hole / AdGuard</li>
+</ul>
+</li>
+<li>
+<p><strong>VLAN30 – Guest WiFi</strong><br>
+Create a guest network with VLAN30:</p>
+<ul>
+<li>Strict isolation from home and Homelab networks</li>
+<li>Rate limiting and time-based access possible</li>
+<li>DNS filtering and logging through OPNsense</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="34-strategic-goals">3.4 Strategic Goals </h2>
+<ul>
+<li>Maintain clear separation between <strong>home</strong>, <strong>lab</strong>, and <strong>guest</strong> networks</li>
+<li>Increase security while keeping administration overhead manageable</li>
+<li>Establish a robust backup and monitoring strategy</li>
+<li>Use the Homelab as a learning platform for:
+<ul>
+<li>virtualization</li>
+<li>networking and VLANs</li>
+<li>firewall administration</li>
+<li>storage and backup concepts</li>
+</ul>
+</li>
+</ul>
+<div class="pagebreak"> </div>
+<br>
+<h1 id="04--network-architecture">04 — Network Architecture </h1>
+<h2 id="41-high-level-design-diagram">4.1 High-Level Design Diagram </h2>
+<div class="mermaid">graph TD
+    %% ===== Classes / Colors =====
+    classDef router fill:#ffe6cc,stroke:#e0a46b,stroke-width:1px,color:#333;
+    classDef switch fill:#fff9c4,stroke:#d4c34f,stroke-width:1px,color:#333;
+    classDef server fill:#e3f2fd,stroke:#64b5f6,stroke-width:1px,color:#111;
+    classDef fw fill:#f3e5f5,stroke:#ab47bc,stroke-width:1px,color:#111;
+    classDef client fill:#eeeeee,stroke:#bdbdbd,stroke-width:1px,color:#111;
+
+    %% ===== Nodes =====
+    Internet((Internet))
+
+    Fritzbox["Fritzbox Router&lt;br&gt;192.168.178.1"]
+    DLAN["DLAN Link&lt;br&gt;(temporary uplink)"]
+
+    SG105E["TP-Link SG105E&lt;br&gt;Smart Managed Switch"]
+    SG105["TP-Link SG105&lt;br&gt;Unmanaged&lt;br&gt;VLAN10 LAN"]
+
+    ProxmoxNIC0["Proxmox NIC0&lt;br&gt;vmbr0 / VLAN1"]
+    Proxmox10G["Proxmox 10G NIC&lt;br&gt;vmbr1 / VLAN10"]
+
+    OPN_WAN["OPNsense WAN&lt;br&gt;vtnet0 (DHCP)"]
+    OPN_LAN["OPNsense LAN&lt;br&gt;vtnet1 (10.10.10.1/24)"]
+
+    HomelabClients["Homelab Clients&lt;br&gt;10.10.10.x/24"]
+
+    %% ===== Connections =====
+    Internet --&gt; Fritzbox
+    Fritzbox --&gt; DLAN
+    DLAN --&gt; SG105E
+
+    SG105E --&gt;|"Port 4&lt;br&gt;VLAN1 untagged"| ProxmoxNIC0
+    SG105E --&gt;|"Port 5&lt;br&gt;VLAN10 untagged"| Proxmox10G
+    SG105E --&gt;|"Port 3&lt;br&gt;VLAN10 untagged"| SG105
+    SG105E --&gt;|"Port 1&lt;br&gt;VLAN1 untagged"| Fritzbox
+
+    ProxmoxNIC0 --&gt; vmbr0["vmbr0&lt;br&gt;192.168.178.10/24"]
+    Proxmox10G --&gt; vmbr1["vmbr1&lt;br&gt;LAN bridge&lt;br&gt;no IP"]
+
+    vmbr0 --&gt; OPN_WAN
+    vmbr1 --&gt; OPN_LAN
+
+    OPN_LAN --&gt; HomelabClients
+
+    %% ===== Class assignments =====
+    class Fritzbox,DLAN router;
+    class SG105E,SG105 switch;
+    class ProxmoxNIC0,Proxmox10G,vmbr0,vmbr1 server;
+    class OPN_WAN,OPN_LAN fw;
+    class HomelabClients client;
+</div><div class="pagebreak"> </div>  <br>
+<h1 id="05---switch-and-vlan-configuration">05 - Switch and VLAN Configuration </h1>
+<h2 id="51-vlan-plan">5.1 VLAN Plan </h2>
+<table>
+<thead>
+<tr>
+<th>VLAN</th>
+<th>ID</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Default LAN</strong></td>
+<td>1</td>
+<td>Home network from Fritzbox (management + WAN for OPNsense)</td>
+</tr>
+<tr>
+<td><strong>Homelab / Pentest LAN</strong></td>
+<td>10</td>
+<td>OPNsense LAN + isolated virtual network</td>
+</tr>
+</tbody>
+</table>
+<h2 id="52-sg105e-vlan-implementation">5.2 SG105E VLAN Implementation </h2>
+<p>Untagged VLANs on Physical Ports</p>
+<p>SG105E does not support hybrid tagging per enterprise-grade standards; instead it uses PVID-based untagging.</p>
+<table>
+<thead>
+<tr>
+<th>Port</th>
+<th>PVID</th>
+<th>VLAN Membership</th>
+<th>Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>VLAN1 untagged</td>
+<td>WAN uplink</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1 or 10</td>
+<td>admin access</td>
+<td>variable</td>
+</tr>
+<tr>
+<td>3</td>
+<td>10</td>
+<td>VLAN10 untagged</td>
+<td>uplink to unmanaged SG105</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1</td>
+<td>VLAN1 untagged</td>
+<td>Proxmox management</td>
+</tr>
+<tr>
+<td>5</td>
+<td>10</td>
+<td>VLAN10 untagged</td>
+<td>Proxmox 10G NIC</td>
+</tr>
+</tbody>
+</table>
+<h2 id="53-port-plan">5.3 Port Plan </h2>
+<div class="mermaid">graph TD
+    %% ===== Classes / Colors =====
+    classDef subgraphBg fill:#fff7a8,stroke:#d4ba3c,stroke-width:1px,color:#333;
+    classDef port fill:#fffef2,stroke:#d4ba3c,stroke-width:1px,color:#333;
+    classDef device fill:#e3f2fd,stroke:#64b5f6,stroke-width:1px,color:#111;
+    classDef label fill:#ffffff,stroke:none,color:#111,font-weight:bold;
+
+    %% ===== Label über dem Switch =====
+    SG105ELabel["TP-Link SG105E smart managed switch"]
+    class SG105ELabel label
+
+    %% ===== SG105E Subgraph (ohne sichtbaren Titel) =====
+    subgraph SG105E[" "]
+        class SG105E subgraphBg
+
+        P1["Port 1&lt;br&gt;PVID 1&lt;br&gt;VLAN1 untagged"]
+        P2["Port 2&lt;br&gt;PVID 1 oder 10&lt;br&gt;Admin-Port"]
+        P3["Port 3&lt;br&gt;PVID 10&lt;br&gt;VLAN10 untagged"]
+        P4["Port 4&lt;br&gt;PVID 1&lt;br&gt;VLAN1 untagged"]
+        P5["Port 5&lt;br&gt;PVID 10&lt;br&gt;VLAN10 untagged"]
+
+        class P1,P2,P3,P4,P5 port
+    end
+
+    %% Label mit Subgraph verbinden (nur fürs Layout)
+    SG105ELabel --&gt; SG105E
+
+    %% ===== Externe Geräte =====
+    Fritzbox["Fritzbox Router"]
+    AdminDevice["Admin-Laptop / MacBook"]
+    SG105["TP-Link SG105 unmanaged&lt;br&gt;(VLAN10 LAN)"]
+    ProxmoxNIC0["Proxmox NIC0&lt;br&gt;Management"]
+    Proxmox10G["Proxmox 10G NIC&lt;br&gt;Homelab"]
+
+    %% ===== Links =====
+    Fritzbox --&gt; P1
+    AdminDevice --&gt; P2
+    SG105 --&gt; P3
+    ProxmoxNIC0 --&gt; P4
+    Proxmox10G --&gt; P5
+
+    class Fritzbox,AdminDevice,SG105,ProxmoxNIC0,Proxmox10G device
+</div><div class="pagebreak"> </div>  <br>
+<h1 id="06---proxmox-configuration">06 - Proxmox Configuration </h1>
+<h2 id="61-network-interfaces-configuration">6.1 Network Interfaces Configuration </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>auto lo
+iface lo inet loopback
+
+// Management NIC
+auto nic0
+iface nic0 inet manual
+
+// LAN NIC for OPNsense
+auto enp10s0
+iface enp10s0 inet manual
+
+// vmbr0 -- Management + OPNsense WAN
+auto vmbr0
+iface vmbr0 inet static
+    address 192.168.178.10/24
+    gateway 192.168.178.1
+    bridge-ports nic0
+    bridge-stp off
+    bridge-fd 0
+
+// vmbr1 -- OPNsense LAN (no IP on host!)
+auto vmbr1
+iface vmbr1 inet manual
+    bridge-ports enp10s0
+    bridge-stp off
+    bridge-fd 0
+</code></pre><h3 id="62-proxmox-network-diagram">6.2 Proxmox Network Diagram </h3>
+<div class="mermaid">graph TD
+    %% ===== Classes / Colors =====
+    classDef host fill:#e3f2fd,stroke:#64b5f6,stroke-width:1px,color:#111;
+    classDef fw fill:#f3e5f5,stroke:#ab47bc,stroke-width:1px,color:#111;
+    classDef vm fill:#eeeeee,stroke:#bdbdbd,stroke-width:1px,color:#111;
+
+    %% ===== Proxmox Host =====
+    subgraph ProxmoxHost["Proxmox Host"]
+        NIC0["Physical NIC0&lt;br&gt;VLAN1"]
+        NIC10G["Physical 10G NIC&lt;br&gt;VLAN10"]
+
+        vmbr0["vmbr0&lt;br&gt;192.168.178.10/24&lt;br&gt;GW 192.168.178.1"]
+        vmbr1["vmbr1&lt;br&gt;no IP&lt;br&gt;LAN bridge"]
+
+        NIC0 --&gt; vmbr0
+        NIC10G --&gt; vmbr1
+    end
+
+    %% ===== OPNsense VM =====
+    subgraph OPNsense["OPNsense firewall VM"]
+        WAN["WAN vtnet0&lt;br&gt;DHCP via Fritzbox"]
+        LAN["LAN vtnet1&lt;br&gt;10.10.10.1/24"]
+    end
+
+    vmbr0 --&gt; WAN
+    vmbr1 --&gt; LAN
+
+    %% ===== Homelab VMs =====
+    subgraph Homelab["Homelab VMs / Container"]
+        VM1["VM / LXC&lt;br&gt;10.10.10.x"]
+        VM2["VM / LXC&lt;br&gt;10.10.10.x"]
+    end
+
+    LAN --&gt; VM1
+    LAN --&gt; VM2
+
+    class ProxmoxHost,NIC0,NIC10G,vmbr0,vmbr1 host;
+    class OPNsense,WAN,LAN fw;
+    class Homelab,VM1,VM2 vm;
+</div><h2 id="63-key-rules">6.3 Key Rules </h2>
+<ul>
+<li>vmbr0 must NEVER lose its static IP (fail-safe management)</li>
+<li>vmbr1 must NEVER have an IP (isolated, routed by OPNsense)</li>
+<li>OPNsense interacts only with the vtnet virtual interfaces</li>
+<li>VLANs are handled physically by switch, not by Proxmox</li>
+</ul>
+<div class="pagebreak"> </div>  <br>
+<h1 id="07---opnsense-configuration">07 - OPNsense Configuration </h1>
+<h2 id="71-interface-assignment">7.1 Interface Assignment </h2>
+<table>
+<thead>
+<tr>
+<th>vtnet</th>
+<th>Purpose</th>
+<th>Connected to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>vtnet0</strong></td>
+<td>WAN</td>
+<td>vmbr0 (DHCP via Fritzbox)</td>
+</tr>
+<tr>
+<td><strong>vtnet1</strong></td>
+<td>LAN</td>
+<td>vmbr1 (static 10.10.10.1/24)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="72-initial-console-setup-critical-steps">7.2 Initial Console Setup (Critical Steps) </h2>
+<h5 id="wan-vtnet0">WAN (vtnet0) </h5>
+<ul>
+<li>Configure IPv4: YES</li>
+<li>Mode: DHCP</li>
+<li>No static IPs</li>
+<li>No IPv6</li>
+<li>No gateway manually set</li>
+</ul>
+<h5 id="lan-vtnet1">LAN (vtnet1) </h5>
+<ul>
+<li>Configure IPv4: YES</li>
+<li>IP: 10.10.10.1</li>
+<li>Subnet: /24</li>
+<li>Enable DHCP server: YES</li>
+<li>Range: 10.10.10.100 – 10.10.10.200</li>
+<li>Enable HTTPS: YES</li>
+<li>Generate self-signed certificate: YES</li>
+</ul>
+<h2 id="73-overview">7.3 Overview </h2>
+<div class="mermaid">flowchart TD
+    %% ===== Classes / Colors =====
+    classDef router fill:#ffe6cc,stroke:#e0a46b,stroke-width:1px,color:#333;
+    classDef fw fill:#f3e5f5,stroke:#ab47bc,stroke-width:1px,color:#111;
+    classDef client fill:#eeeeee,stroke:#bdbdbd,stroke-width:1px,color:#111;
+
+    Fritz["Fritzbox Router&lt;br&gt;192.168.178.1"]
+    WAN["OPNsense WAN vtnet0&lt;br&gt;DHCP 192.168.178.x"]
+    FW["OPNsense Firewall&lt;br&gt;NAT + Rules"]
+    LAN["OPNsense LAN vtnet1&lt;br&gt;10.10.10.1/24"]
+
+    C1["Homelab Client 1&lt;br&gt;10.10.10.x"]
+    C2["Homelab Client 2&lt;br&gt;10.10.10.x"]    
+    Future["Future Services&lt;br&gt;NAS / DNS / Pentest Lab"]
+
+    Fritz --&gt; WAN
+    WAN --&gt; FW
+    FW --&gt; LAN
+
+    LAN --&gt; C1
+    LAN --&gt; C2
+    LAN --&gt; Future
+
+    class Fritz router;
+    class WAN,FW,LAN fw;
+    class C1,C2,Future client;
+</div><div class="pagebreak"> </div>  <br>
+<h1 id="08--installation-history">08 – Installation History </h1>
+<p>This section provides a full chronological and technical overview of all installation steps, problems encountered, corrections applied, and recovery operations performed during the initial deployment of the Homelab environment.</p>
+<p>The goal of this chapter is to ensure complete traceability, reproducibility, and long-term documentation of all system bring-up activities.</p>
+<hr>
+<h2 id="81-hardware-bring-up-and-initial-system-issues">8.1 Hardware Bring-Up and Initial System Issues </h2>
+<h3 id="811-motherboard-cleaning-and-preparation">8.1.1 Motherboard Cleaning and Preparation </h3>
+<p>Before the first installation attempt, the motherboard required physical cleaning due to dust accumulation and residual thermal paste near the CPU socket and VRM area. The cleaning process included:</p>
+<ul>
+<li>removing the CPU cooler</li>
+<li>cleaning all exposed surfaces with isopropyl alcohol</li>
+<li>visually inspecting the PCB for conductive debris</li>
+<li>reseating RAM modules and cables</li>
+<li>ensuring correct cooler mounting pressure</li>
+</ul>
+<p>After cleaning, the board successfully powered on and completed POST.</p>
+<hr>
+<h3 id="812-ram-voltage-mismatch-causing-boot-loop">8.1.2 RAM Voltage Mismatch Causing Boot Loop </h3>
+<p>During early boot attempts, the system entered a repeating <strong>boot loop</strong> (power → shutdown → power).<br>
+Investigation revealed that the RAM ran with an incorrect/missmatched <strong>XMP voltage</strong>, not supported by the motherboard defaults.</p>
+<p>Resolution:</p>
+<ul>
+<li>BIOS reset to factory defaults</li>
+<li>RAM manually set to JEDEC-compatible voltage (1.2V–1.35V)</li>
+<li>system booted successfully afterward</li>
+<li>1.2V and 1.35V RAM are not compatible with each other</li>
+</ul>
+<hr>
+<h3 id="813-incorrect-drive-selection-during-initial-proxmox-installation">8.1.3 Incorrect Drive Selection During Initial Proxmox Installation </h3>
+<p>The initial Proxmox installation was accidentally performed on the SSD instead of the NVMe SSD.</p>
+<p>Consequences:</p>
+<ul>
+<li>very slow overall system performance</li>
+<li>disk conflicts with planned ZFS mirror</li>
+<li>boot loader not located where expected</li>
+</ul>
+<p>Solution:</p>
+<ul>
+<li>wipe the SSD</li>
+<li>perform a fresh Proxmox installation onto the NVMe SSD</li>
+</ul>
+<hr>
+<h3 id="814-nvme-reinstallation-and-boot-drive-verification">8.1.4 NVMe Reinstallation and Boot Drive Verification </h3>
+<p>A full reinstall was performed on the NVMe storage. During this step:</p>
+<ul>
+<li>standard LVM configuration was chosen</li>
+<li>no ZFS-on-root configuration</li>
+<li>default Proxmox network bridge created (vmbr0)</li>
+</ul>
+<p>The system installed successfully and booted without issues.</p>
+<hr>
+<h3 id="815-nic-not-detected--pcie-slot-reassignment">8.1.5 NIC Not Detected → PCIe Slot Reassignment </h3>
+<p>After installation, the 10G NIC did not appear in Proxmox.</p>
+<p>Root cause:</p>
+<ul>
+<li>NIC was installed in a PCIe slot not providing the required chipset connection.</li>
+</ul>
+<p>Fix:</p>
+<ul>
+<li>move card into a different PCIe slot</li>
+<li>reboot</li>
+<li>NIC recognized correctly as <code>enp10s0</code></li>
+</ul>
+<hr>
+<h2 id="82-network-configuration-challenges">8.2 Network Configuration Challenges </h2>
+<h3 id="821-vlan-and-proxmox-misconfigurations">8.2.1 VLAN and Proxmox Misconfigurations </h3>
+<p>During early configuration steps, several issues occurred:</p>
+<ol>
+<li>
+<p><strong>VLAN1/VLAN10 incorrectly configured</strong></p>
+<ul>
+<li>PVID values on the SG105E switched ports were mismatched</li>
+<li>untagged/tagged roles not correctly assigned</li>
+</ul>
+</li>
+<li>
+<p><strong>Incorrect Proxmox IP configuration</strong></p>
+<ul>
+<li><code>vmbr0</code> was misconfigured</li>
+<li>caused complete loss of connectivity</li>
+<li>required physical access and temporary GPU installation</li>
+</ul>
+</li>
+<li>
+<p><strong>Incorrect vtnet assignments in OPNsense</strong></p>
+<ul>
+<li>vtnet0 (WAN) and vtnet1 (LAN) were swapped</li>
+<li>caused Proxmox to direct its management interface into the LAN</li>
+<li>resulted in a full Proxmox lockout</li>
+</ul>
+</li>
+<li>
+<p><strong>Manual recovery operations</strong></p>
+<ul>
+<li>temporary GPU installation for console access</li>
+<li>repair of <code>/etc/network/interfaces</code></li>
+<li>reassignment of WAN/LAN inside OPNsense</li>
+<li>validation of DHCP on VLAN10</li>
+<li>ensuring VLAN1 remained untagged and isolated</li>
+</ul>
+</li>
+</ol>
+<div class="pagebreak"> </div>  <br>
+<h1 id="09--issues-and-solutions">09 – Issues and Solutions </h1>
+<p>This chapter documents all issues encountered during the Homelab deployment, including their symptoms, root causes, diagnostic methods, and confirmed solutions.<br>
+The purpose of this section is to make future recovery easier, to prevent recurring errors, and to maintain a technical knowledge base for the system.</p>
+<hr>
+<h2 id="91-issue-ram-voltage-mismatch-causing-boot-loop">9.1 Issue: RAM Voltage Mismatch Causing Boot Loop </h2>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>System powers on → immediately shuts off → loops</li>
+<li>No POST</li>
+<li>No video output</li>
+</ul>
+<p><strong>Root Cause:</strong><br>
+Mixed voltage RAM modules (1.2V + 1.35V) caused unstable memory training.</p>
+<p><strong>Diagnostics:</strong></p>
+<ul>
+<li>Removing modules one by one</li>
+<li>Identifying that both 1.2V and 1.35V modules boot successfully, but not in combination (pairs only)</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Remove mismatched high-voltage modules</li>
+<li>Use identical JEDEC-compatible sticks only</li>
+<li>System boots consistently afterward</li>
+</ul>
+<hr>
+<h2 id="92-issue-proxmox-unreachable-wrong-static-ip-assigned">9.2 Issue: Proxmox Unreachable (Wrong Static IP Assigned) </h2>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>No Web UI</li>
+<li>No SSH</li>
+<li>Ping fails</li>
+<li>Server disappears from LAN</li>
+</ul>
+<p><strong>Root Cause:</strong><br>
+Management bridge <code>vmbr0</code> was accidentally assigned <strong>10.10.10.1</strong>, an internal LAN address used by OPNsense.<br>
+This moved Proxmox into the firewall LAN, isolating it from the main network.</p>
+<p><strong>Diagnostics:</strong></p>
+<ul>
+<li>Checked switch: port active</li>
+<li>No ARP entry</li>
+<li>No DHCP lease → static misconfig</li>
+<li>Required local console to repair</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Install GPU temporarily</li>
+<li>Boot into shell</li>
+<li>Restore <code>/etc/network/interfaces</code></li>
+<li>Reassign correct management IP (e.g. 192.168.178.10/24)</li>
+</ul>
+<hr>
+<h2 id="93-issue-opnsense-assigning-ip-to-proxmox-vmbr0">9.3 Issue: OPNsense Assigning IP to Proxmox <code>vmbr0</code> </h2>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Proxmox suddenly receives an IP from OPNsense</li>
+<li>Routing conflicts</li>
+<li>GUI becomes unreachable</li>
+</ul>
+<p><strong>Root Cause:</strong><br>
+WAN/LAN interfaces inside OPNsense were reversed:</p>
+<ul>
+<li>vtnet0 (WAN) was configured as LAN</li>
+<li>vtnet1 (LAN) was configured as WAN</li>
+</ul>
+<p>This caused OPNsense to treat vmbr0 as a LAN client and assign DHCP to it.</p>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Reassign interfaces inside OPNsense console</li>
+<li>Correct mapping:
+<ul>
+<li><strong>vtnet0 → WAN (DHCP)</strong></li>
+<li><strong>vtnet1 → LAN (10.10.10.1/24)</strong></li>
+</ul>
+</li>
+<li>Reboot firewall</li>
+<li>Connectivity restored</li>
+</ul>
+<hr>
+<h2 id="94-issue-iso-not-booting-inside-proxmox-vm">9.4 Issue: ISO Not Booting Inside Proxmox VM </h2>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>VM shows “No bootable device”</li>
+<li>OPNsense/other ISOs ignored</li>
+</ul>
+<p><strong>Root Cause:</strong><br>
+Legacy BIOS mode selected → incompatible with OPNsense image.</p>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Change VM firmware to <strong>SeaBIOS</strong></li>
+<li>Boot works immediately</li>
+</ul>
+<hr>
+<h2 id="95-issue-10g-nic-not-detected">9.5 Issue: 10G NIC Not Detected </h2>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Proxmox shows only one network adapter</li>
+<li><code>ip a</code> returns no 10G interface</li>
+<li>No link LEDs on NIC</li>
+</ul>
+<p><strong>Root Cause:</strong><br>
+The XG-C100C card needs a <strong>full x16 or x4 electrical slot</strong>.<br>
+Original slot was chipset-disabled for large PCIe devices.</p>
+<p><strong>Diagnostics:</strong></p>
+<ul>
+<li>Move card between slots</li>
+<li>Find slot electrically wired to CPU</li>
+</ul>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Move GPU to secondary slot</li>
+<li>Install NIC in primary x16 slot</li>
+<li>NIC detected as <code>enp10s0</code> after reboot</li>
+</ul>
+<hr>
+<h2 id="96-issue-opnsense-boot-loop-into-live-mode">9.6 Issue: OPNsense Boot Loop Into Live Mode </h2>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>After installation OPNsense keeps showing the installer</li>
+<li>Settings gone after reboot</li>
+<li>LAN IP resets each time</li>
+</ul>
+<p><strong>Root Cause:</strong><br>
+The ISO was <strong>not removed</strong> after installation.<br>
+VM rebooted into Live Mode instead of the installed system.</p>
+<p><strong>Solution:</strong></p>
+<ul>
+<li>Remove ISO from VM hardware → CD/DVD drive</li>
+<li>Reboot → boots from virtual disk normally</li>
+</ul>
+<hr>
+<h2 id="97-issue-proxmox-root-filesystem-becomes-read-only-after-enabling-iommu">9.7 Issue: Proxmox Root Filesystem Becomes Read-Only After Enabling IOMMU </h2>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>
+<p>System boots → root filesystem becomes read-only after ~3–10 seconds</p>
+</li>
+<li>
+<p>Docker/LXC/TrueNAS VMs fail</p>
+</li>
+<li>
+<p>Logs show:<br>
+<code>EXT4-fs (dm-1): failed to convert unwritten extents …</code><br>
+<code>EXT4-fs error: aborted journal</code><br>
+<code>EXT4-fs: Remounting filesystem read-only</code></p>
+</li>
+<li>
+<p>Web UI unreachable</p>
+</li>
+<li>
+<p>SSH read-only</p>
+</li>
+</ul>
+<p><strong>Root Cause:</strong><br>
+The NVMe used for Proxmox installation is a <strong>DRAM-less SSD</strong>.<br>
+When enabling <strong>IOMMU</strong>, queue depth and latency increase →<br>
+NVMe firmware triggers <strong>protection mode</strong>, making the drive read-only.</p>
+<p>This is a known problem with DRAM-less NVMe in virtualization environments.</p>
+<p><strong>Failed Solutions Attempted:</strong></p>
+<ul>
+<li>Proxmox Recovery Mode → no fix</li>
+<li>Boot into single-user mode via GRUB:<br>
+<code>init=/bin/bash</code></li>
+<li>Running filesystem repair:<br>
+<code>fsck -yf /dev/mapper/pve-root</code> or <code>fsck -yf /dev/pve/root </code></li>
+<li>All fsck phases successful → <strong>BUT issue returns after reboot</strong><br>
+→ because the problem is firmware-level, not filesystem-level.</li>
+</ul>
+<p><strong>Working Solution:</strong></p>
+<ul>
+<li><strong>Disable IOMMU</strong> in BIOS</li>
+<li>Avoid passthrough for the DRAM-less NVMe</li>
+<li>Use WD Red HDDs as a <strong>ZFS mirror</strong></li>
+<li>Keep NVMe only as simple Proxmox boot disk</li>
+<li>(Optional) Replace with a proper NVMe with DRAM</li>
+</ul>
+<hr>
+<h2 id="98-issue-flow-summary-diagram">9.8 Issue Flow Summary Diagram </h2>
+<p>A complete overview of all discovered issues:</p>
+<div class="mermaid">graph TD
+  classDef ok fill:#e3f2fd,stroke:#64b5f6,color:#111,stroke-width:1px;
+  classDef warn fill:#fff9c4,stroke:#d4ba3c,color:#333,stroke-width:1px;
+  classDef error fill:#ffebee,stroke:#e57373,color:#b71c1c,stroke-width:1px;
+  classDef fix fill:#e8f5e9,stroke:#66bb6a,color:#1b5e20,stroke-width:1px;
+
+  A["RAM Voltage Mismatch"]:::error --&gt; A_fix["Remove Mismatched Modules"]:::fix
+  B["Wrong Proxmox IP Assigned"]:::error --&gt; B_fix["Restore /etc/network/interfaces"]:::fix
+  C["OPNsense Assigning DHCP to vmbr0"]:::error --&gt; C_fix["Correct WAN/LAN Mapping"]:::fix
+  D["ISO Not Booting"]:::warn --&gt; D_fix["Switch to SeaBIOS"]:::fix
+  E["NIC Not Detected"]:::error --&gt; E_fix["Move NIC to Primary PCIe Slot"]:::fix
+  F["OPNsense Booting Live Mode"]:::warn --&gt; F_fix["Remove ISO After Installation"]:::fix
+  G["NVMe Becomes Read-Only (IOMMU)"]:::error --&gt; G_fix["Disable IOMMU / Use ZFS Mirror"]:::fix
+</div><div class="pagebreak"> </div>  <br>
+<h1 id="10--lessons-learned">10 – Lessons Learned </h1>
+<p>This chapter summarizes all important insights gained during the Homelab deployment.<br>
+The following points are based on real-world issues encountered during setup, configuration, and recovery operations.</p>
+<hr>
+<h2 id="101-general-hardware-lessons">10.1 General Hardware Lessons </h2>
+<ul>
+<li>
+<p><strong>DRAM-less NVMe SSDs are not suitable for hypervisors or passthrough workloads</strong><br>
+NVMe without onboard DRAM becomes unstable under IOMMU load and may enter firmware-level read-only mode.<br>
+→ Always use NVMe with DRAM or enterprise SSDs for Proxmox boot devices.</p>
+</li>
+<li>
+<p><strong>PCIe slot selection matters</strong><br>
+Some NICs (e.g., XG-C100C) require x4/x8/x16 electrical lanes and will not initialize in chipset-side slots.<br>
+→ Always verify PCIe lane wiring in the motherboard manual.</p>
+</li>
+<li>
+<p><strong>RAM voltage must match across all modules</strong><br>
+Mixing 1.2V, 1.35V, and 1.5V modules causes unstable memory training and boot loops.<br>
+→ Use identical sticks or disable XMP profiles.</p>
+</li>
+<li>
+<p><strong>A temporary GPU is essential for recovery</strong><br>
+Headless servers are easily lost due to misconfiguration.<br>
+→ Keep a simple PCIe GPU available for emergency console access.</p>
+</li>
+</ul>
+<hr>
+<h2 id="102-proxmox-lessons">10.2 Proxmox Lessons </h2>
+<ul>
+<li>
+<p><strong>Always keep a dedicated management network outside the firewall</strong><br>
+Mixing Proxmox management IPs with internal OPNsense subnets will instantly lock you out.</p>
+</li>
+<li>
+<p><strong>Avoid configuring the management IP inside a routed VLAN</strong><br>
+Setting <code>vmbr0</code> to 10.10.10.1 isolated Proxmox behind the firewall.<br>
+→ Never reuse internal firewall subnets for hypervisor management.</p>
+</li>
+<li>
+<p><strong>Backup <code>/etc/network/interfaces</code> before major changes</strong><br>
+A single wrong entry leads to a complete lockout.<br>
+→ Keep a copy in <code>/root/interfaces.backup</code>.</p>
+</li>
+<li>
+<p><strong>IOMMU passthrough must not be used with DRAM-less NVMe</strong><br>
+This combination forces EXT4 into read-only protection.<br>
+→ Disable IOMMU or move the system to a more suitable disk.</p>
+</li>
+<li>
+<p><strong>Always remove ISOs from VM CD/DVD drives after installation</strong><br>
+OPNsense will otherwise reboot into Live Mode every time instead of booting from the installed disk.</p>
+</li>
+</ul>
+<hr>
+<h2 id="103-firewall--opnsense-lessons">10.3 Firewall / OPNsense Lessons </h2>
+<ul>
+<li>
+<p><strong>Never configure a firewall from inside the network it is routing</strong><br>
+If WAN/LAN are misassigned, the admin machine becomes isolated.</p>
+</li>
+<li>
+<p><strong>Understand vtnet interface ordering</strong><br>
+VirtIO adapters are not always assigned in alphabetical order.<br>
+→ Always check interface MACs when mapping WAN/LAN.</p>
+</li>
+<li>
+<p><strong>OPNsense will assign DHCP to any interface marked as LAN</strong><br>
+Misconfigured interfaces can affect the hypervisor network.<br>
+→ Confirm interface roles before enabling DHCP.</p>
+</li>
+<li>
+<p><strong>Back up OPNsense configuration regularly</strong><br>
+The <code>config.xml</code> file should be exported after every major change.</p>
+</li>
+</ul>
+<hr>
+<h2 id="104-networking--vlan-lessons">10.4 Networking &amp; VLAN Lessons </h2>
+<ul>
+<li>
+<p><strong>Tagged vs. untagged VLANs must be fully understood before implementation</strong><br>
+Incorrect PVID or tagging breaks routing instantly.<br>
+→ Use diagrams to visualize port roles and flows.</p>
+</li>
+<li>
+<p><strong>Smart switches behave differently than enterprise switches</strong><br>
+TP-Link SG105E uses PVID logic instead of Cisco-style trunk/native VLAN logic.<br>
+→ Understand vendor-specific VLAN behavior before deployment.</p>
+</li>
+<li>
+<p><strong>Use diagrams early to avoid mis-patching</strong><br>
+Visual planning reduces errors and improves documentation quality.</p>
+</li>
+<li>
+<p><strong>Do not rely on DLAN or mixed uplinks for core infrastructure</strong><br>
+Temporary uplinks can hide problems or introduce packet loss.<br>
+→ Use dedicated Ethernet runs for long-term stability.</p>
+</li>
+</ul>
+<hr>
+<h2 id="105-storage-lessons">10.5 Storage Lessons </h2>
+<ul>
+<li>
+<p><strong>ZFS mirrors are more reliable than single consumer NVMe</strong><br>
+WD Red HDD mirrors with ZFS provide safer storage for TrueNAS and VM data.</p>
+</li>
+<li>
+<p><strong>NVMe should not carry both system and passthrough workload</strong><br>
+Separate boot and VM storage whenever possible.</p>
+</li>
+<li>
+<p><strong>EXT4 fsck success does not mean the NVMe is healthy</strong><br>
+Firmware issues can re-trigger read-only mode regardless of filesystem repair.</p>
+</li>
+</ul>
+<hr>
+<h2 id="106-operational-lessons">10.6 Operational Lessons </h2>
+<ul>
+<li>
+<p><strong>Document every IP, MAC address, and VLAN early</strong><br>
+Prevents conflicts and simplifies recovery.</p>
+</li>
+<li>
+<p><strong>Make incremental changes, not large batches</strong><br>
+Multiple changes at once make troubleshooting significantly harder.</p>
+</li>
+<li>
+<p><strong>Always validate routing before applying firewall rules</strong><br>
+Avoids creating unintended network islands.</p>
+</li>
+<li>
+<p><strong>Maintain a basic runbook for common tasks and recovery steps</strong><br>
+Short procedures for “Proxmox unreachable”, “OPNsense unreachable”, etc., reduce stress in outage situations.</p>
+</li>
+</ul>
+<hr>
+<h2 id="107-summary">10.7 Summary </h2>
+<p>The Homelab project provided valuable insights into:</p>
+<ul>
+<li>proper hypervisor installation</li>
+<li>VLAN and network architecture</li>
+<li>OPNsense routing and firewall concepts</li>
+<li>hardware compatibility and limitations</li>
+<li>storage and backup strategies</li>
+<li>repeatable recovery procedures</li>
+</ul>
+<p>These lessons form the foundation for stable, maintainable future expansions of the Homelab environment.</p>
+<div class="pagebreak"> </div>
+<br>
+<h1 id="11--best-practices">11 – Best Practices </h1>
+<p>This chapter consolidates all operational, architectural, and security best practices derived from the Homelab deployment.<br>
+It serves as a reference for future upgrades, redesigns, and troubleshooting scenarios.</p>
+<hr>
+<h2 id="111-hypervisor-best-practices">11.1 Hypervisor Best Practices </h2>
+<ul>
+<li>Use NVMe with DRAM or enterprise SSDs for the Proxmox boot drive.</li>
+<li>Keep a dedicated out-of-band management network for Proxmox.</li>
+<li>Never expose management interfaces through routed VLANs.</li>
+<li>Always maintain a physical GPU for emergency console access.</li>
+<li>Back up <code>/etc/network/interfaces</code> before making network changes.</li>
+<li>Use ZFS mirrors for reliable long-term storage.</li>
+<li>Avoid DRAM-less NVMe for virtualization or passthrough workloads.</li>
+</ul>
+<hr>
+<h2 id="112-networking-best-practices">11.2 Networking Best Practices </h2>
+<ul>
+<li>Keep management VLAN separate from production VLANs.</li>
+<li>Create network diagrams before implementing changes.</li>
+<li>Use descriptive port labeling on switches and patch panels.</li>
+<li>Always verify PVID and VLAN tagging behavior on consumer smart switches.</li>
+<li>Plan uplinks and downlinks ahead of time (avoid DLAN for core infrastructure).</li>
+<li>Prefer wired Ethernet for critical links over powerline or WiFi bridges.</li>
+</ul>
+<hr>
+<h2 id="113-opnsense--firewall-best-practices">11.3 OPNsense / Firewall Best Practices </h2>
+<ul>
+<li>Never configure a firewall from inside the network it is routing.</li>
+<li>Verify correct WAN/LAN interface assignments before enabling DHCP.</li>
+<li>Document all static mappings, VLANs, and upstream gateways.</li>
+<li>Enable HTTPS access and generate a self-signed certificate at installation.</li>
+<li>Maintain offline backups of the OPNsense configuration.</li>
+<li>Restrict Web GUI exposure to management networks only.</li>
+</ul>
+<hr>
+<h2 id="114-storage-best-practices">11.4 Storage Best Practices </h2>
+<ul>
+<li>Keep the hypervisor boot device separate from VM storage.</li>
+<li>Use ZFS for disks that host VMs, containers, or NAS workloads.</li>
+<li>Use S.M.A.R.T. monitoring for early disk failure detection.</li>
+<li>Avoid placing the root filesystem and passthrough workloads on the same device.</li>
+<li>Regularly test backup restores, not only backup creation.</li>
+</ul>
+<hr>
+<h2 id="115-operational-best-practices">11.5 Operational Best Practices </h2>
+<ul>
+<li>Make incremental changes—never modify multiple systems at once without testing.</li>
+<li>Keep a changelog of configuration edits and firmware updates.</li>
+<li>Test connectivity after every modification (ping, ARP, DHCP, traceroute).</li>
+<li>Validate routing before applying new firewall rules.</li>
+<li>Document network topology updates immediately.</li>
+<li>Perform regular off-site configuration backups.</li>
+</ul>
+<hr>
+<h2 id="116-checklists">11.6 Checklists </h2>
+<h3 id="1161-pre-change-checklist">11.6.1 Pre-Change Checklist </h3>
+<ul>
+<li>Recent backup of Proxmox, OPNsense, and important VMs.</li>
+<li>Changelog entry prepared (what will be changed and why).</li>
+<li>Rollback plan defined.</li>
+<li>Maintenance window agreed (if services are impacted).</li>
+</ul>
+<h3 id="1162-post-change-verification-checklist">11.6.2 Post-Change Verification Checklist </h3>
+<ul>
+<li>Management access (Web UI + SSH) confirmed.</li>
+<li>Internet access from VLAN10 confirmed.</li>
+<li>Inter-VLAN isolation verified.</li>
+<li>Monitoring and logging still operational.</li>
+<li>Backups still running as scheduled.</li>
+</ul>
+<hr>
+<h2 id="117-backup-strategy-high-level">11.7 Backup Strategy (High-Level) </h2>
+<ul>
+<li>
+<p><strong>Daily:</strong></p>
+<ul>
+<li>Proxmox configuration backup.</li>
+<li>OPNsense configuration export (automated or manual).</li>
+</ul>
+</li>
+<li>
+<p><strong>Weekly:</strong></p>
+<ul>
+<li>Snapshot or backup of critical VMs / containers.</li>
+<li>TrueNAS configuration backup.</li>
+</ul>
+</li>
+<li>
+<p><strong>Monthly:</strong></p>
+<ul>
+<li>Off-site copy to external disk or cloud storage.</li>
+</ul>
+</li>
+</ul>
+<p>This strategy can be refined as additional services (e.g., monitoring, AD lab) are introduced.</p>
+<div class="pagebreak"> </div>
+<p></p>
+<p></p><h1 id="appendix--diagrams">Appendix – Diagrams </h1>
+<p>This appendix contains all architectural and troubleshooting diagrams used throughout the documentation.<br>
+They are consolidated here for quick reference and print-friendly output.</p>
+<hr>
+<h2 id="a1-high-level-network-architecture">A.1 High-Level Network Architecture </h2>
+<div class="mermaid">graph TD
+    classDef router fill:#ffe6cc,stroke:#e0a46b,color:#333,stroke-width:1px;
+    classDef switch fill:#fff9c4,stroke:#d4c34f,color:#333,stroke-width:1px;
+    classDef server fill:#e3f2fd,stroke:#64b5f6,color:#111,stroke-width:1px;
+    classDef fw fill:#f3e5f5,stroke:#ab47bc,color:#111,stroke-width:1px;
+    classDef client fill:#eeeeee,stroke:#bdbdbd,color:#111,stroke-width:1px;
+
+    Internet((Internet))
+
+    Fritzbox["Fritzbox Router&lt;br&gt;192.168.178.1"]:::router
+    DLAN["DLAN Link&lt;br&gt;(temporary uplink)"]:::router
+
+    SG105E["TP-Link SG105E&lt;br&gt;Smart Managed"]:::switch
+    SG105["TP-Link SG105&lt;br&gt;Unmanaged VLAN10"]:::switch
+
+    ProxmoxNIC0["Proxmox NIC0&lt;br&gt;vmbr0 / VLAN1"]:::server
+    Proxmox10G["Proxmox 10G NIC&lt;br&gt;vmbr1 / VLAN10"]:::server
+
+    OPN_WAN["OPNsense WAN&lt;br&gt;vtnet0 (DHCP)"]:::fw
+    OPN_LAN["OPNsense LAN&lt;br&gt;vtnet1 (10.10.10.1/24)"]:::fw
+
+    HomelabClients["Homelab Clients&lt;br&gt;10.10.10.x/24"]:::client
+
+    Internet --&gt; Fritzbox
+    Fritzbox --&gt; DLAN
+    DLAN --&gt; SG105E
+
+    SG105E --&gt;|"Port 4&lt;br&gt;VLAN1 untagged"| ProxmoxNIC0
+    SG105E --&gt;|"Port 5&lt;br&gt;VLAN10 untagged"| Proxmox10G
+    SG105E --&gt;|"Port 3&lt;br&gt;VLAN10 untagged"| SG105
+    SG105E --&gt;|"Port 1&lt;br&gt;VLAN1 untagged"| Fritzbox
+
+    ProxmoxNIC0 --&gt; vmbr0["vmbr0&lt;br&gt;192.168.178.10/24"]:::server
+    Proxmox10G --&gt; vmbr1["vmbr1&lt;br&gt;LAN bridge&lt;br&gt;No IP"]:::server
+
+    vmbr0 --&gt; OPN_WAN
+    vmbr1 --&gt; OPN_LAN
+    OPN_LAN --&gt; HomelabClients
+</div><hr>
+<h2 id="a2-proxmox-virtual-network-layout">A.2 Proxmox Virtual Network Layout </h2>
+<div class="mermaid">graph TD
+    classDef host fill:#e3f2fd,stroke:#64b5f6,color:#111;
+    classDef fw fill:#f3e5f5,stroke:#ab47bc,color:#111;
+    classDef client fill:#eeeeee,stroke:#bdbdbd,color:#111;
+
+    subgraph Proxmox["Proxmox Host"]
+        NIC0["Physical NIC0&lt;br&gt;VLAN1"]:::host
+        NIC10["Physical 10G NIC&lt;br&gt;VLAN10"]:::host
+        vmbr0["vmbr0&lt;br&gt;192.168.178.10/24"]:::host
+        vmbr1["vmbr1&lt;br&gt;No IP (LAN bridge)"]:::host
+        NIC0 --&gt; vmbr0
+        NIC10 --&gt; vmbr1
+    end
+
+    subgraph Firewall["OPNsense"]
+        WAN["WAN vtnet0&lt;br&gt;DHCP from Fritzbox"]:::fw
+        LAN["LAN vtnet1&lt;br&gt;10.10.10.1/24"]:::fw
+    end
+
+    vmbr0 --&gt; WAN
+    vmbr1 --&gt; LAN
+
+    Client1["VM / LXC&lt;br&gt;10.10.10.x"]:::client
+    Client2["VM / LXC&lt;br&gt;10.10.10.x"]:::client
+
+    LAN --&gt; Client1
+    LAN --&gt; Client2
+</div><hr>
+<h2 id="a3-issue-overview-diagram">A.3 Issue Overview Diagram </h2>
+<div class="mermaid">graph TD
+    classDef ok fill:#e3f2fd,stroke:#64b5f6,color:#111;
+    classDef warn fill:#fff9c4,stroke:#d4ba3c,color:#333;
+    classDef error fill:#ffebee,stroke:#e57373,color:#b71c1c;
+    classDef fix fill:#e8f5e9,stroke:#66bb6a,color:#1b5e20;
+
+    A["RAM Voltage Mismatch"]:::error --&gt; A_fix["Use JEDEC RAM only"]:::fix
+    B["Wrong Proxmox IP"]:::error --&gt; B_fix["Restore interfaces + IP plan"]:::fix
+    C["WAN/LAN Swapped"]:::error --&gt; C_fix["Correct vtnet mapping"]:::fix
+    D["ISO Boot Failure"]:::warn --&gt; D_fix["Switch to SeaBIOS firmware"]:::fix
+    E["NIC Not Detected"]:::error --&gt; E_fix["Move NIC to primary PCIe slot"]:::fix
+    F["OPNsense Live Mode Loop"]:::warn --&gt; F_fix["Remove ISO after install"]:::fix
+    G["NVMe Read-Only (IOMMU)"]:::error --&gt; G_fix["Disable IOMMU / use ZFS mirror"]:::fix
+</div><div class="pagebreak"> </div>
+<p></p>
+
+      </div>
+      <div class="md-sidebar-toc">
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#homelab-infrastructure-documentation" class="md-toc-link"><p><strong>Homelab Infrastructure Documentation</strong></p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#author" class="md-toc-link">
+            <p><strong>Author</strong></p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#last-updated" class="md-toc-link">
+            <p><strong>Last Updated</strong></p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#document-control" class="md-toc-link">
+            <p><strong>Document Control</strong></p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#copyright-notice" class="md-toc-link">
+            <p><strong>Copyright Notice</strong></p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#table-of-content" class="md-toc-link">
+            <p>Table of Content</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#01---project-homelab-overview" class="md-toc-link"><p>01 - Project Homelab Overview</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#11-executive-summary" class="md-toc-link">
+            <p>1.1 Executive Summary</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#02---hardware-overview" class="md-toc-link"><p>02 - Hardware Overview</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#21-server-hardware-proxmox-host" class="md-toc-link">
+            <p>2.1 Server Hardware (Proxmox Host)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#22-networking-hardware" class="md-toc-link">
+            <p>2.2 Networking Hardware</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#23-switch-configuration-summary" class="md-toc-link">
+            <p>2.3 Switch Configuration Summary</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#03--future-roadmap" class="md-toc-link"><p>03 – Future Roadmap</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#31-short-term-03-months" class="md-toc-link">
+            <p>3.1 Short-Term (0–3 months)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#32-mid-term-312-months" class="md-toc-link">
+            <p>3.2 Mid-Term (3–12 months)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#33-long-term-12-months" class="md-toc-link">
+            <p>3.3 Long-Term (12+ months)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#34-strategic-goals" class="md-toc-link">
+            <p>3.4 Strategic Goals</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#04--network-architecture" class="md-toc-link"><p>04 — Network Architecture</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#41-high-level-design-diagram" class="md-toc-link">
+            <p>4.1 High-Level Design Diagram</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#05---switch-and-vlan-configuration" class="md-toc-link"><p>05 - Switch and VLAN Configuration</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#51-vlan-plan" class="md-toc-link">
+            <p>5.1 VLAN Plan</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#52-sg105e-vlan-implementation" class="md-toc-link">
+            <p>5.2 SG105E VLAN Implementation</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#53-port-plan" class="md-toc-link">
+            <p>5.3 Port Plan</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#06---proxmox-configuration" class="md-toc-link"><p>06 - Proxmox Configuration</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#61-network-interfaces-configuration" class="md-toc-link"><p>6.1 Network Interfaces Configuration</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#62-proxmox-network-diagram" class="md-toc-link">
+            <p>6.2 Proxmox Network Diagram</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#63-key-rules" class="md-toc-link">
+            <p>6.3 Key Rules</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#07---opnsense-configuration" class="md-toc-link"><p>07 - OPNsense Configuration</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#71-interface-assignment" class="md-toc-link">
+            <p>7.1 Interface Assignment</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#72-initial-console-setup-critical-steps" class="md-toc-link">
+            <p>7.2 Initial Console Setup (Critical Steps)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#73-overview" class="md-toc-link">
+            <p>7.3 Overview</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#08--installation-history" class="md-toc-link"><p>08 – Installation History</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#81-hardware-bring-up-and-initial-system-issues" class="md-toc-link"><p>8.1 Hardware Bring-Up and Initial System Issues</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#811-motherboard-cleaning-and-preparation" class="md-toc-link">
+            <p>8.1.1 Motherboard Cleaning and Preparation</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#812-ram-voltage-mismatch-causing-boot-loop" class="md-toc-link">
+            <p>8.1.2 RAM Voltage Mismatch Causing Boot Loop</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#813-incorrect-drive-selection-during-initial-proxmox-installation" class="md-toc-link">
+            <p>8.1.3 Incorrect Drive Selection During Initial Proxmox Installation</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#814-nvme-reinstallation-and-boot-drive-verification" class="md-toc-link">
+            <p>8.1.4 NVMe Reinstallation and Boot Drive Verification</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#815-nic-not-detected--pcie-slot-reassignment" class="md-toc-link">
+            <p>8.1.5 NIC Not Detected → PCIe Slot Reassignment</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#82-network-configuration-challenges" class="md-toc-link"><p>8.2 Network Configuration Challenges</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#821-vlan-and-proxmox-misconfigurations" class="md-toc-link">
+            <p>8.2.1 VLAN and Proxmox Misconfigurations</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#09--issues-and-solutions" class="md-toc-link"><p>09 – Issues and Solutions</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#91-issue-ram-voltage-mismatch-causing-boot-loop" class="md-toc-link">
+            <p>9.1 Issue: RAM Voltage Mismatch Causing Boot Loop</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#92-issue-proxmox-unreachable-wrong-static-ip-assigned" class="md-toc-link">
+            <p>9.2 Issue: Proxmox Unreachable (Wrong Static IP Assigned)</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#93-issue-opnsense-assigning-ip-to-proxmox-vmbr0" class="md-toc-link">
+            <p>9.3 Issue: OPNsense Assigning IP to Proxmox <code>vmbr0</code></p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#94-issue-iso-not-booting-inside-proxmox-vm" class="md-toc-link">
+            <p>9.4 Issue: ISO Not Booting Inside Proxmox VM</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#95-issue-10g-nic-not-detected" class="md-toc-link">
+            <p>9.5 Issue: 10G NIC Not Detected</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#96-issue-opnsense-boot-loop-into-live-mode" class="md-toc-link">
+            <p>9.6 Issue: OPNsense Boot Loop Into Live Mode</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#97-issue-proxmox-root-filesystem-becomes-read-only-after-enabling-iommu" class="md-toc-link">
+            <p>9.7 Issue: Proxmox Root Filesystem Becomes Read-Only After Enabling IOMMU</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#98-issue-flow-summary-diagram" class="md-toc-link">
+            <p>9.8 Issue Flow Summary Diagram</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#10--lessons-learned" class="md-toc-link"><p>10 – Lessons Learned</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#101-general-hardware-lessons" class="md-toc-link">
+            <p>10.1 General Hardware Lessons</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#102-proxmox-lessons" class="md-toc-link">
+            <p>10.2 Proxmox Lessons</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#103-firewall--opnsense-lessons" class="md-toc-link">
+            <p>10.3 Firewall / OPNsense Lessons</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#104-networking--vlan-lessons" class="md-toc-link">
+            <p>10.4 Networking &amp; VLAN Lessons</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#105-storage-lessons" class="md-toc-link">
+            <p>10.5 Storage Lessons</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#106-operational-lessons" class="md-toc-link">
+            <p>10.6 Operational Lessons</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#107-summary" class="md-toc-link">
+            <p>10.7 Summary</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#11--best-practices" class="md-toc-link"><p>11 – Best Practices</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#111-hypervisor-best-practices" class="md-toc-link">
+            <p>11.1 Hypervisor Best Practices</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#112-networking-best-practices" class="md-toc-link">
+            <p>11.2 Networking Best Practices</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#113-opnsense--firewall-best-practices" class="md-toc-link">
+            <p>11.3 OPNsense / Firewall Best Practices</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#114-storage-best-practices" class="md-toc-link">
+            <p>11.4 Storage Best Practices</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#115-operational-best-practices" class="md-toc-link">
+            <p>11.5 Operational Best Practices</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#116-checklists" class="md-toc-link"><p>11.6 Checklists</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#1161-pre-change-checklist" class="md-toc-link">
+            <p>11.6.1 Pre-Change Checklist</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#1162-post-change-verification-checklist" class="md-toc-link">
+            <p>11.6.2 Post-Change Verification Checklist</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#117-backup-strategy-high-level" class="md-toc-link">
+            <p>11.7 Backup Strategy (High-Level)</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#appendix--diagrams" class="md-toc-link"><p>Appendix – Diagrams</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#a1-high-level-network-architecture" class="md-toc-link">
+            <p>A.1 High-Level Network Architecture</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#a2-proxmox-virtual-network-layout" class="md-toc-link">
+            <p>A.2 Proxmox Virtual Network Layout</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#a3-issue-overview-diagram" class="md-toc-link">
+            <p>A.3 Issue Overview Diagram</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+</div>
+      <a id="sidebar-toc-btn">≡</a>
+    
+    
+    <script type="module">
+// TODO: If ZenUML gets integrated into mermaid in the future,
+//      we can remove the following lines.
+
+
+var MERMAID_CONFIG = ({"startOnLoad":false});
+if (typeof MERMAID_CONFIG !== 'undefined') {
+  MERMAID_CONFIG.startOnLoad = false
+  MERMAID_CONFIG.cloneCssStyles = false
+  MERMAID_CONFIG.theme = "default"
+}
+
+mermaid.initialize(MERMAID_CONFIG || {})
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+  Reveal.addEventListener('slidetransitionend', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+  await mermaid.run({
+    nodes: document.querySelectorAll('.mermaid')
+  })
+} else {
+  await mermaid.run({
+    nodes: document.querySelectorAll('.mermaid')
+  })
+}
+</script>
+    
+    
+    
+<script>
+
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>
