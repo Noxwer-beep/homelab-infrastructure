@@ -7,7 +7,7 @@
 | **RAM**                    | 16GB DDR4 3200MHz CL16 (2×8GB, compatible voltage after removal of mismatched sticks) |
 | **Motherboard**            | ASRock B450 Pro4                                                                      |
 | **Primary Storage (Host)** | 500GB NVMe M.2 SSD (new purchase, used for Proxmox installation)                      |
-| **Additional Storage**     | 1TB HDD (old), 2×4TB WD Red (new, for future NAS / RAIDZ1)                            |
+| **Additional Storage**     | 1TB HDD (old), 2×4TB WD Red in RAIDZ1 — now in the NAS, not on a shelf                 |
 | **Power Supply**           | 350W (limited SATA connectors, worked with SATA splitter approach)                    |
 | **GPU**                    | Old GPU temporarily used for troubleshooting (no iGPU on CPU), removed afterward      |
 | **NIC**                    | ASUS XG-C100C 10G NIC (PCIe, moved to primary x16 slot for detection)                 |

@@ -63,9 +63,11 @@ compilation, and the engineering vault (decisions, runbooks, build logs).
 - **Firewall / router** — OPNsense, virtualized
 - **Switching** — TP-Link SG105E with VLAN segmentation
 - **Lab VLAN** — isolated network, `<lab-subnet>/24`
-- **Storage** — NVMe boot disk, planned ZFS mirror on HDDs
-- **Planned services** — DNS filtering (Pi-hole/AdGuard), monitoring
-  (Prometheus/Grafana), NAS (TrueNAS SCALE), an AD pentest range
+- **Storage** — NVMe boot disk; 2×4TB WD Red in RAIDZ1 in the NAS
+- **NAS** — SMB + NFS shares and the backup target; home LAN only, never exposed
+- **Pentest box** — Metasploitable 2 on the lab subnet, deny-by-default towards the
+  home network, no port forwarding
+- **Next** — DNS filtering, Prometheus/Grafana, an AD range
 
 The documentation covers both the *final design* and the *real-world problems*
 encountered getting there, because the second part is what a rebuild actually needs.

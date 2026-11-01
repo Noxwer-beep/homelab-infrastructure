@@ -29,12 +29,11 @@ These items provide immediate value with limited effort and minimal hardware req
 
 These additions extend functionality and improve resilience and observability.
 
-- **TrueNAS SCALE or ZFS-based NAS**  
-  Build a dedicated NAS based on ZFS to host:
-  - VM disks
-  - Backups
-  - Media and data shares  
-  Integrate with Proxmox via NFS or iSCSI.
+- **NAS — done, integrating further**  
+  The NAS is running: 2×4TB WD Red in RAIDZ1, SMB and NFS shares, and it is the backup
+  target. What is left is wiring it in properly — Proxmox backups straight to it over
+  NFS, a restore that has actually been tested, and a check that it is not reachable
+  from the lab subnet without a rule.
 
 - **Monitoring Stack (Prometheus, Grafana)**  
   Collect metrics from:
