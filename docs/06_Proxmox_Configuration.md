@@ -16,8 +16,8 @@ iface enp10s0 inet manual
 // vmbr0 -- Management + OPNsense WAN
 auto vmbr0
 iface vmbr0 inet static
-    address 192.168.178.10/24
-    gateway 192.168.178.1
+    address <mgmt-subnet>/24
+    gateway <home-router-ip>
     bridge-ports nic0
     bridge-stp off
     bridge-fd 0
@@ -43,7 +43,7 @@ graph TD
         NIC0["Physical NIC0<br>VLAN1"]
         NIC10G["Physical 10G NIC<br>VLAN10"]
 
-        vmbr0["vmbr0<br>192.168.178.10/24<br>GW 192.168.178.1"]
+        vmbr0["vmbr0<br><mgmt-subnet>/24<br>GW <home-router-ip>"]
         vmbr1["vmbr1<br>no IP<br>LAN bridge"]
 
         NIC0 --> vmbr0
@@ -53,7 +53,7 @@ graph TD
     %% ===== OPNsense VM =====
     subgraph OPNsense["OPNsense firewall VM"]
         WAN["WAN vtnet0<br>DHCP via Fritzbox"]
-        LAN["LAN vtnet1<br>10.10.10.1/24"]
+        LAN["LAN vtnet1<br><lab-gateway>/24"]
     end
 
     vmbr0 --> WAN
@@ -61,8 +61,8 @@ graph TD
 
     %% ===== Homelab VMs =====
     subgraph Homelab["Homelab VMs / Container"]
-        VM1["VM / LXC<br>10.10.10.x"]
-        VM2["VM / LXC<br>10.10.10.x"]
+        VM1["VM / LXC<br><lab-subnet>"]
+        VM2["VM / LXC<br><lab-subnet>"]
     end
 
     LAN --> VM1
@@ -78,3 +78,7 @@ graph TD
 - OPNsense interacts only with the vtnet virtual interfaces
 - VLANs are handled physically by switch, not by Proxmox
 <!-- pagebreak -->
+
+---
+
+> **Addressing redacted.** Exact IPs, the VLAN port map and the master PDF live in a private repository. This published version keeps the design reasoning and the configuration approach; any address shown as `<lab-subnet>`, `<home-lan>` or `<lab-gateway>` is a placeholder.

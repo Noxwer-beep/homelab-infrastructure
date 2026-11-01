@@ -17,7 +17,7 @@ graph TD
 
     Internet((Internet))
 
-    Fritzbox["Fritzbox Router<br>192.168.178.1"]:::router
+    Fritzbox["Fritzbox Router<br><home-router-ip>"]:::router
     DLAN["DLAN Link<br>(temporary uplink)"]:::router
 
     SG105E["TP-Link SG105E<br>Smart Managed"]:::switch
@@ -27,9 +27,9 @@ graph TD
     Proxmox10G["Proxmox 10G NIC<br>vmbr1 / VLAN10"]:::server
 
     OPN_WAN["OPNsense WAN<br>vtnet0 (DHCP)"]:::fw
-    OPN_LAN["OPNsense LAN<br>vtnet1 (10.10.10.1/24)"]:::fw
+    OPN_LAN["OPNsense LAN<br>vtnet1 (<lab-gateway>/24)"]:::fw
 
-    HomelabClients["Homelab Clients<br>10.10.10.x/24"]:::client
+    HomelabClients["Homelab Clients<br><lab-subnet>/24"]:::client
 
     Internet --> Fritzbox
     Fritzbox --> DLAN
@@ -40,7 +40,7 @@ graph TD
     SG105E -->|"Port 3<br>VLAN10 untagged"| SG105
     SG105E -->|"Port 1<br>VLAN1 untagged"| Fritzbox
 
-    ProxmoxNIC0 --> vmbr0["vmbr0<br>192.168.178.10/24"]:::server
+    ProxmoxNIC0 --> vmbr0["vmbr0<br><mgmt-subnet>/24"]:::server
     Proxmox10G --> vmbr1["vmbr1<br>LAN bridge<br>No IP"]:::server
 
     vmbr0 --> OPN_WAN
@@ -61,7 +61,7 @@ graph TD
     subgraph Proxmox["Proxmox Host"]
         NIC0["Physical NIC0<br>VLAN1"]:::host
         NIC10["Physical 10G NIC<br>VLAN10"]:::host
-        vmbr0["vmbr0<br>192.168.178.10/24"]:::host
+        vmbr0["vmbr0<br><mgmt-subnet>/24"]:::host
         vmbr1["vmbr1<br>No IP (LAN bridge)"]:::host
         NIC0 --> vmbr0
         NIC10 --> vmbr1
@@ -69,14 +69,14 @@ graph TD
 
     subgraph Firewall["OPNsense"]
         WAN["WAN vtnet0<br>DHCP from Fritzbox"]:::fw
-        LAN["LAN vtnet1<br>10.10.10.1/24"]:::fw
+        LAN["LAN vtnet1<br><lab-gateway>/24"]:::fw
     end
 
     vmbr0 --> WAN
     vmbr1 --> LAN
 
-    Client1["VM / LXC<br>10.10.10.x"]:::client
-    Client2["VM / LXC<br>10.10.10.x"]:::client
+    Client1["VM / LXC<br><lab-subnet>"]:::client
+    Client2["VM / LXC<br><lab-subnet>"]:::client
 
     LAN --> Client1
     LAN --> Client2

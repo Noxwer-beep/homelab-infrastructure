@@ -31,7 +31,7 @@ The following points are based on real-world issues encountered during setup, co
   Mixing Proxmox management IPs with internal OPNsense subnets will instantly lock you out.
 
 - **Avoid configuring the management IP inside a routed VLAN**  
-  Setting `vmbr0` to 10.10.10.1 isolated Proxmox behind the firewall.  
+  Setting `vmbr0` to <lab-gateway> isolated Proxmox behind the firewall.  
   → Never reuse internal firewall subnets for hypervisor management.
 
 - **Backup `/etc/network/interfaces` before major changes**  

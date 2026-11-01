@@ -4,7 +4,7 @@
 | vtnet      | Purpose | Connected to                 |
 | ---------- | ------- | ---------------------------- |
 | **vtnet0** | WAN     | vmbr0 (DHCP via Fritzbox)    |
-| **vtnet1** | LAN     | vmbr1 (static 10.10.10.1/24) |
+| **vtnet1** | LAN     | vmbr1 (static <lab-gateway>/24) |
 
 ## 7.2 Initial Console Setup (Critical Steps)
 ##### WAN (vtnet0)
@@ -16,10 +16,10 @@
 
 ##### LAN (vtnet1)
  - Configure IPv4: YES
- - IP: 10.10.10.1
+ - IP: <lab-gateway>
  - Subnet: /24
  - Enable DHCP server: YES
- - Range: 10.10.10.100 – 10.10.10.200
+ - Range: <lab-host-a> – <lab-host-b>
  - Enable HTTPS: YES
  - Generate self-signed certificate: YES
 
@@ -31,13 +31,13 @@ flowchart TD
     classDef fw fill:#f3e5f5,stroke:#ab47bc,stroke-width:1px,color:#111;
     classDef client fill:#eeeeee,stroke:#bdbdbd,stroke-width:1px,color:#111;
 
-    Fritz["Fritzbox Router<br>192.168.178.1"]
-    WAN["OPNsense WAN vtnet0<br>DHCP 192.168.178.x"]
+    Fritz["Fritzbox Router<br><home-router-ip>"]
+    WAN["OPNsense WAN vtnet0<br>DHCP <home-lan>.x"]
     FW["OPNsense Firewall<br>NAT + Rules"]
-    LAN["OPNsense LAN vtnet1<br>10.10.10.1/24"]
+    LAN["OPNsense LAN vtnet1<br><lab-gateway>/24"]
 
-    C1["Homelab Client 1<br>10.10.10.x"]
-    C2["Homelab Client 2<br>10.10.10.x"]    
+    C1["Homelab Client 1<br><lab-subnet>"]
+    C2["Homelab Client 2<br><lab-subnet>"]    
     Future["Future Services<br>NAS / DNS / Pentest Lab"]
 
     Fritz --> WAN
@@ -54,3 +54,7 @@ flowchart TD
 ```
 
 <!-- pagebreak -->
+
+---
+
+> **Addressing redacted.** Exact IPs, the VLAN port map and the master PDF live in a private repository. This published version keeps the design reasoning and the configuration approach; any address shown as `<lab-subnet>`, `<home-lan>` or `<lab-gateway>` is a placeholder.

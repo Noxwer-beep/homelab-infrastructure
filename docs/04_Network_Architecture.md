@@ -13,7 +13,7 @@ graph TD
     %% ===== Nodes =====
     Internet((Internet))
 
-    Fritzbox["Fritzbox Router<br>192.168.178.1"]
+    Fritzbox["Fritzbox Router<br><home-router-ip>"]
     DLAN["DLAN Link<br>(temporary uplink)"]
 
     SG105E["TP-Link SG105E<br>Smart Managed Switch"]
@@ -23,9 +23,9 @@ graph TD
     Proxmox10G["Proxmox 10G NIC<br>vmbr1 / VLAN10"]
 
     OPN_WAN["OPNsense WAN<br>vtnet0 (DHCP)"]
-    OPN_LAN["OPNsense LAN<br>vtnet1 (10.10.10.1/24)"]
+    OPN_LAN["OPNsense LAN<br>vtnet1 (<lab-gateway>/24)"]
 
-    HomelabClients["Homelab Clients<br>10.10.10.x/24"]
+    HomelabClients["Homelab Clients<br><lab-subnet>/24"]
 
     %% ===== Connections =====
     Internet --> Fritzbox
@@ -37,7 +37,7 @@ graph TD
     SG105E -->|"Port 3<br>VLAN10 untagged"| SG105
     SG105E -->|"Port 1<br>VLAN1 untagged"| Fritzbox
 
-    ProxmoxNIC0 --> vmbr0["vmbr0<br>192.168.178.10/24"]
+    ProxmoxNIC0 --> vmbr0["vmbr0<br><mgmt-subnet>/24"]
     Proxmox10G --> vmbr1["vmbr1<br>LAN bridge<br>no IP"]
 
     vmbr0 --> OPN_WAN
@@ -53,3 +53,7 @@ graph TD
     class HomelabClients client;
 ```
 <!-- pagebreak -->
+
+---
+
+> **Addressing redacted.** Exact IPs, the VLAN port map and the master PDF live in a private repository. This published version keeps the design reasoning and the configuration approach; any address shown as `<lab-subnet>`, `<home-lan>` or `<lab-gateway>` is a placeholder.

@@ -35,7 +35,7 @@ Mixed voltage RAM modules (1.2V + 1.35V) caused unstable memory training.
 - Server disappears from LAN  
 
 **Root Cause:**  
-Management bridge `vmbr0` was accidentally assigned **10.10.10.1**, an internal LAN address used by OPNsense.  
+Management bridge `vmbr0` was accidentally assigned **<lab-gateway>**, an internal LAN address used by OPNsense.  
 This moved Proxmox into the firewall LAN, isolating it from the main network.
 
 **Diagnostics:**  
@@ -48,7 +48,7 @@ This moved Proxmox into the firewall LAN, isolating it from the main network.
 - Install GPU temporarily  
 - Boot into shell  
 - Restore `/etc/network/interfaces`  
-- Reassign correct management IP (e.g. 192.168.178.10/24)
+- Reassign correct management IP (e.g. <mgmt-subnet>/24)
 
 ---
 
@@ -70,7 +70,7 @@ This caused OPNsense to treat vmbr0 as a LAN client and assign DHCP to it.
 - Reassign interfaces inside OPNsense console  
 - Correct mapping:  
   - **vtnet0 → WAN (DHCP)**  
-  - **vtnet1 → LAN (10.10.10.1/24)**  
+  - **vtnet1 → LAN (<lab-gateway>/24)**  
 - Reboot firewall  
 - Connectivity restored
 

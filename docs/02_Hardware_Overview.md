@@ -27,6 +27,6 @@ TP-Link SG105E Configuration (Smart Managed)
 | **1** | Incoming from DLAN/Fritzbox | VLAN1 untagged           | Main WAN/Heimnetz                  |
 | **2** | Free/temporary admin port   | VLAN1 or VLAN10 untagged | Used for MacBook admin device      |
 | **3** | Uplink to SG105 unmanaged   | VLAN10 untagged          | Dedicated Pentest/Homelab LAN      |
-| **4** | Proxmox NIC0 (Onboard)      | VLAN1 untagged           | Management IP 192.168.178.10       |
+| **4** | Proxmox NIC0 (Onboard)      | VLAN1 untagged           | Management IP <proxmox-mgmt-ip>       |
 | **5** | Proxmox 10G NIC (enp10s0)   | VLAN10 untagged          | Routed internally via OPNsense LAN |
 <!-- pagebreak -->

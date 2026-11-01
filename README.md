@@ -1,9 +1,18 @@
 # Homelab Infrastructure Documentation
 
-This repository contains the full **architecture, configuration, troubleshooting history, and roadmap** of my personal Homelab.
+This repository contains the **architecture, configuration approach, troubleshooting
+history and roadmap** of my personal homelab.
 
-The lab is built around **Proxmox VE**, **OPNsense**, VLAN segmentation and planned ZFS-based storage.  
-It is designed for **virtualization, networking labs, security experiments, and long-term learning**.
+The lab is built around **Proxmox VE**, **OPNsense**, VLAN segmentation and planned
+ZFS-based storage.
+It is designed for **virtualization, networking labs, security experiments and long-term learning**.
+
+> **Addressing is redacted.** Exact IPs, the VLAN port map and the master PDF are
+> kept in a private repository. What is published here is the design reasoning and
+> the configuration approach — placeholders such as `<lab-subnet>`, `<home-lan>` and
+> `<lab-gateway>` stand in for real addresses. A network map is reconnaissance
+> material; the reasoning is the part worth sharing.
+
     ![Status](https://img.shields.io/badge/status-active-success)
     ![Docs](https://img.shields.io/badge/docs-markdown-blue)
     ![Platform](https://img.shields.io/badge/platform-Proxmox%20%7C%20OPNsense-lightgrey)
@@ -12,12 +21,14 @@ It is designed for **virtualization, networking labs, security experiments, and 
    ## Repository Structure
 
 ```text
-docs/        → Main documentation (Markdown)
-images/      → Network diagrams, screenshots 
-configs/     → Example configuration files 
+docs/        → Design, configuration approach and history (Markdown)
 CHANGELOG.md → Version history of the documentation
 README.md    → You are here
 ```
+
+Private, not published: exact addressing, per-port VLAN assignments, the master
+PDF compilation, and the engineering vault (decisions, runbooks, build logs).
+
 
    ### Documentation Files (docs/)
    The following Markdown files make up the core of the documentation:
@@ -48,7 +59,7 @@ Each file focuses on a specific aspect of the homelab, such as hardware overview
    - **Hypervisor:** Proxmox VE
     - **Firewall / Router:** OPNsense (virtualized)
     - **Switching:** TP-Link SG105E with VLAN segmentation
-    - **Homelab VLAN:** Isolated lab network (e.g. 10.10.10.0/24)
+    - **Homelab VLAN:** Isolated lab network (e.g. <lab-subnet>/24)
     - **Storage:** NVMe boot disk + planned ZFS mirror on HDDs
     - **Planned Services:** DNS filtering (Pi-hole / AdGuard), monitoring (Prometheus/Grafana), NAS (TrueNAS SCALE), AD pentest lab
 
