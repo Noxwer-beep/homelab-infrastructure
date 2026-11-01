@@ -11,10 +11,9 @@
 
 ---
 
-This repository is the **architecture, configuration approach, troubleshooting history
-and roadmap** of my homelab: Proxmox VE, OPNsense, VLAN segmentation and planned
-ZFS storage. It exists for virtualization, networking and security labs, and for
-learning how the pieces actually fit together.
+How the lab is put together, and why: Proxmox VE, OPNsense, VLAN segmentation and
+planned ZFS storage. I write it down for two reasons — so I can rebuild it, and so I can
+explain a decision instead of guessing at it later. The mistakes are in here too.
 
 > **Addressing is redacted.** Exact IPs, the VLAN port map and the master PDF live in a
 > private vault. What is published here is the design reasoning and the configuration
