@@ -1,127 +1,100 @@
-# Homelab Infrastructure Documentation
+<div align="center">
+  <img src="assets/cat.png" width="72" alt="">
+  <h1>Homelab Infrastructure</h1>
+  <p><em>How the lab is put together, and why each decision was made.</em></p>
+  <p>
+    <a href="https://noxwer-beep.github.io/portfolio/homelab.html">Case study</a> ·
+    <a href="docs/01_Project_Overview.md">Start reading</a> ·
+    <a href="CHANGELOG.md">Changelog</a>
+  </p>
+</div>
 
-This repository contains the **architecture, configuration approach, troubleshooting
-history and roadmap** of my personal homelab.
+---
 
-The lab is built around **Proxmox VE**, **OPNsense**, VLAN segmentation and planned
-ZFS-based storage.
-It is designed for **virtualization, networking labs, security experiments and long-term learning**.
+This repository is the **architecture, configuration approach, troubleshooting history
+and roadmap** of my homelab: Proxmox VE, OPNsense, VLAN segmentation and planned
+ZFS storage. It exists for virtualization, networking and security labs, and for
+learning how the pieces actually fit together.
 
-> **Addressing is redacted.** Exact IPs, the VLAN port map and the master PDF are
-> kept in a private repository. What is published here is the design reasoning and
-> the configuration approach — placeholders such as `<lab-subnet>`, `<home-lan>` and
-> `<lab-gateway>` stand in for real addresses. A network map is reconnaissance
-> material; the reasoning is the part worth sharing.
+> **Addressing is redacted.** Exact IPs, the VLAN port map and the master PDF live in a
+> private vault. What is published here is the design reasoning and the configuration
+> approach — placeholders such as `<lab-subnet>`, `<home-lan>` and `<lab-gateway>` stand
+> in for real addresses. A network map is reconnaissance material; the reasoning is the
+> part worth sharing.
 
-    ![Status](https://img.shields.io/badge/status-active-success)
-    ![Docs](https://img.shields.io/badge/docs-markdown-blue)
-    ![Platform](https://img.shields.io/badge/platform-Proxmox%20%7C%20OPNsense-lightgrey)
+The lab is watched and audited by two tools of mine:
 
-   ---
-   ## Repository Structure
+- **[Warden](https://github.com/Noxwer-beep/warden)** — inventory, health and drift.
+  Declares what should be running, checks it, and reports what changed.
+- **[Vantage](https://github.com/Noxwer-beep/vantage)** — authorized recon and
+  vulnerability triage, used against the deliberately vulnerable lab subnet.
+
+## Repository structure
 
 ```text
-docs/        → Design, configuration approach and history (Markdown)
-CHANGELOG.md → Version history of the documentation
-README.md    → You are here
+docs/        design, configuration approach and history (Markdown)
+CHANGELOG.md version history of the documentation
+assets/      the mark
+README.md    you are here
 ```
 
-Private, not published: exact addressing, per-port VLAN assignments, the master
-PDF compilation, and the engineering vault (decisions, runbooks, build logs).
+Private, not published: exact addressing, per-port VLAN assignments, the master PDF
+compilation, and the engineering vault (decisions, runbooks, build logs).
 
+### Documentation files
 
-   ### Documentation Files (docs/)
-   The following Markdown files make up the core of the documentation:
+| File | Covers |
+|---|---|
+| `01_Project_Overview.md` | what the lab is for, and its scope |
+| `02_Hardware_Overview.md` | the physical machine and why these parts |
+| `03_Future_Roadmap.md` | what comes next |
+| `04_Network_Architecture.md` | subnets, routing, where the boundaries are |
+| `05_Switch_and_VLAN_Configuration.md` | the managed switch and port map (redacted) |
+| `06_Proxmox_Configuration.md` | hypervisor layout, storage, VM roles |
+| `07_OPNsense_Configuration.md` | firewall rules and their reasoning |
+| `08_Installation_History.md` | how it was built, in order |
+| `09_Issues_and_Solutions.md` | what broke and what fixed it |
+| `10_Lessons_Learned.md` | what I would do differently |
+| `11_Best_Practices.md` | the rules that survived contact |
+| `999_Appendix_Diagrams.md` | diagrams and reference material |
 
-- `00_Master.md`
-- `01_Project_Overview.md`
-- `02_Hardware_Overview.md`
-- `03_Future_Roadmap.md`
-- `04_Network_Architecture.md`
-- `05_Switch_and_VLAN_Configuration.md`
-- `06_Proxmox_Configuration.md`
-- `07_OPNsense_Configuration.md`
-- `08_Installation_History.md`
-- `09_Issues_and_Solutions.md`
-- `10_Lessons_Learned.md`
-- `11_Best_Practices.md`
-- `999_Appendix_Diagrams.md`
-- `Titlepage.md`
+## Architecture overview
 
-Each file focuses on a specific aspect of the homelab, such as hardware overview, network architecture, Proxmox configuration, OPNsense setup, issues & solutions, lessons learned and best practices.
+- **Hypervisor** — Proxmox VE
+- **Firewall / router** — OPNsense, virtualized
+- **Switching** — TP-Link SG105E with VLAN segmentation
+- **Lab VLAN** — isolated network, `<lab-subnet>/24`
+- **Storage** — NVMe boot disk, planned ZFS mirror on HDDs
+- **Planned services** — DNS filtering (Pi-hole/AdGuard), monitoring
+  (Prometheus/Grafana), NAS (TrueNAS SCALE), an AD pentest range
 
-   ---
+The documentation covers both the *final design* and the *real-world problems*
+encountered getting there, because the second part is what a rebuild actually needs.
 
-   ## Architecture Overview
+## Goals
 
-   Core building blocks:
+- A **reproducible** design, not a one-off build
+- **Enterprise-like segmentation**, because that is where the learning is
+- **Every major issue documented** with its fix, for future recovery
+- A durable base for **security labs, automation and experiments**
 
-   - **Hypervisor:** Proxmox VE
-    - **Firewall / Router:** OPNsense (virtualized)
-    - **Switching:** TP-Link SG105E with VLAN segmentation
-    - **Homelab VLAN:** Isolated lab network (e.g. <lab-subnet>/24)
-    - **Storage:** NVMe boot disk + planned ZFS mirror on HDDs
-    - **Planned Services:** DNS filtering (Pi-hole / AdGuard), monitoring (Prometheus/Grafana), NAS (TrueNAS SCALE), AD pentest lab
+## Versioning
 
-   The documentation covers both the *final design* and the *real-world problems* encountered along the way.
+- **MAJOR** — breaking structural changes to the documentation
+- **MINOR** — new chapters, sections or major improvements
+- **PATCH** — corrections, typo fixes, clarifications
 
-   ---
+Current: **1.1.0** (restructured documentation, roadmap, issues, lessons). All changes
+are tracked in [`CHANGELOG.md`](CHANGELOG.md).
 
-   ## Goals
+## Roadmap
 
-   - Provide a **reproducible** homelab design for learning and experimentation
-    - Simulate **enterprise-like network segmentation** and firewalling
-    - Document **every major issue and fix** for future recovery
-    - Build a long-term base for **security labs, automation and experiments**
-    - Practice clean, structured **technical documentation**
+- TrueNAS SCALE or another ZFS-based NAS
+- A monitoring stack (Prometheus + Grafana)
+- An isolated Active Directory range for pentesting
+- Additional VLANs (IoT, guests) with proper firewalling
+- Automated backups for Proxmox, OPNsense and key VMs
 
-   ---
+## Licence
 
-   ## Versioning & Changelog
-
-   The documentation follows a simple semantic versioning scheme:
-
-   - **MAJOR** – breaking structural changes to the documentation
-    - **MINOR** – new chapters, sections or major improvements
-    - **PATCH** – small corrections, typo fixes, minor clarifications
-
-   All changes are tracked in **[`CHANGELOG.md`](./CHANGELOG.md)**.
-
-   Current documented versions:
-
-   - **1.1.0** – Restructured documentation, added roadmap, issues and lessons.
-    - **1.0.0** – Initial release of the Homelab documentation.
-
-   ---
-
-   ## Usage
-
-   This repository is intended as:
-
-   - A **personal knowledge base** for my homelab
-    - A **reference** for future rebuilds and redesigns
-    - A **learning resource** for others interested in Proxmox + OPNsense homelabs
-    - A record of real configuration mistakes and their solutions
-
-   You can simply browse the `docs/` directory on GitHub or clone the repository and open the files locally in your editor.
-
-   ---
-
-   ## Roadmap (High-Level)
-
-   Planned next steps include:
-
-   - Setting up **TrueNAS SCALE** or another ZFS-based NAS
-    - Adding a **monitoring stack** (Prometheus + Grafana)
-    - Creating an isolated **Active Directory lab** for pentesting
-    - Introducing additional VLANs (IoT, Guests) with proper firewalling
-    - Automating backups for Proxmox, OPNsense and key VMs
-
-   Details can be found in the dedicated roadmap chapter in `docs/`.
-
-   ---
-
-   ## License
-
-   This documentation is primarily for educational and personal use.  
-    If you want to reuse parts of it, please create an issue or contact me first.
+Educational and personal use. If you want to reuse parts of it, open an issue first.
